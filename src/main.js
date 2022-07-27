@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }).addTo(map);
 
   let lc = L.control.locate({
-    position: 'bottomleft',
+    position: 'topright',
     locateOptions: {
       enableHighAccuracy: true
     },
