@@ -40,6 +40,19 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/fb.png" : {
+      "ft" : 32768,
+      "iS" : 523554,
+      "oA" : 0,
+      "oAP" : "\/fb.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
