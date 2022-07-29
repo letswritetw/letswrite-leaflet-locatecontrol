@@ -1,6 +1,6 @@
-- var link = 'leaflet-locatecontrol'
-- var title = 'OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置'
-- var description = 'OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置'
+- var link = 'leaflet-plugin'
+- var title = 'OSM + Leaflet 學習筆記 3：推薦幾個好用套件'
+- var description = 'OSM + Leaflet 學習筆記 3：Leaflet.Locate 推薦幾個好用套件'
 
 <!DOCTYPE html>
 html(lang="zh-Hant")
@@ -24,19 +24,40 @@ html(lang="zh-Hant")
     meta(property="og:description", content=description)
     meta(itemprop="description", content=description)
 
-    meta(itemprop="image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
-    meta(property="og:image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
+    meta(itemprop="image", content=`https://letswritetw.github.io/letswrite-${link}/fb.jpg`)
+    meta(property="og:image", content=`https://letswritetw.github.io/letswrite-${link}/fb.jpg`)
     meta(property="og:image:width", content="1200")
     meta(property="og:image:height", content="630")
     meta(property="og:image:alt", content=title)
 
     link(rel="shortcut icon", href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png")
 
-    //- css
-    script(src="https://cdn.tailwindcss.com")
-    //- link(rel="stylesheet", href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==", crossorigin)
-    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css")
+    //- Leaflet.js
+    link(rel="stylesheet", href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css", integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==", crossorigin)
+
+    //- Leaflet.Locate
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css")
+
+    //- Leaflet.Control.FullScreen
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css")
+
+    //- Leaflet.MiniMap
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css")
+
+    //- Tailwind CSS
+    script(src="https://cdn.tailwindcss.com")
+    link(rel="stylesheet", href="dist/style.min.css", media="screen")
+    script.
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#42A6F7',
+            }
+          }
+        }
+      }
+
     link(rel="stylesheet", href="dist/style.min.css", media="screen")
 
     // Google Tag Manager
@@ -46,15 +67,34 @@ html(lang="zh-Hant")
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PGQ9WQT');
-  body
+  body.bg-slate-900.text-white
 
     // Google Tag Manager (noscript)
     noscript
       iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT", height="0", width="0", style="display:none;visibility:hidden")
     
-    #map
+    .container.mx-auto.py-10
+      .text-center
+        h1.mb-6.font-bold.text-4xl=title
+        p 筆記文：
+          a.text-main.underline(class="hover:no-underline", href=`https://www.letswrite.tw/${link}/`) Let's Write
+        hr.my-8.border-0.border-b.border-zinc-200.border-opacity-40
+      
+      // map
+      .relative.w-full.h-0(class="pb-[56.25%]")
+        #map.absolute.w-full.h-full
 
-    //- script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==", crossorigin)
-    script(src="https://cdn.jsdelivr.net/npm/leaflet@1.7")
+    //- Leaflet.js
+    script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" ,integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==", crossorigin)
+
+    //- Leaflet.Locate
     script(src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js")
+
+    //- Leaflet.Control.FullScreen
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js")
+
+    //- Leaflet.MiniMap
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js")
+
+    //- main
     script(src="dist/main.min.js")

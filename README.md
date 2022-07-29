@@ -1,5 +1,5 @@
-# OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置
+# OSM + Leaflet 學習筆記 3：推薦幾個好用套件
 
-Demo：[demo](https://www.letswritetw.github.io/letswrite-leaflet-locatecontrol/)
+Demo：[demo](https://www.letswritetw.github.io/letswrite-leaflet-plugin/)
 
-筆記文：[Let's Write](https://www.letswrite.tw/leaflet-locatecontrol/)
+筆記文：[Let's Write](https://www.letswrite.tw/leaflet-plugin/)

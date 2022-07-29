@@ -4,27 +4,42 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置 - August - Let's Write</title>
-    <link rel="canonical" href="https://www.letswrite.tw/leaflet-locatecontrol/?ckcachebust=680603021"/>
-    <meta property="og:url" content="https://letswritetw.github.io/letswrite-leaflet-locatecontrol/"/>
+    <title>OSM + Leaflet 學習筆記 3：推薦幾個好用套件 - August - Let's Write</title>
+    <link rel="canonical" href="https://www.letswrite.tw/leaflet-plugin/?ckcachebust=680790489"/>
+    <meta property="og:url" content="https://letswritetw.github.io/letswrite-leaflet-plugin/"/>
     <meta property="fb:app_id" content="911000986339138"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Let's Write"/>
-    <meta property="og:title" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置 - Augustus - Let's Write"/>
-    <meta itemprop="name" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置 - Augustus - Let's Write"/>
-    <meta name="description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置"/>
-    <meta property="og:description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置"/>
-    <meta itemprop="description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置"/>
-    <meta itemprop="image" content="https://letswritetw.github.io/letswrite-leaflet-locatecontrol/fb.png"/>
-    <meta property="og:image" content="https://letswritetw.github.io/letswrite-leaflet-locatecontrol/fb.png"/>
+    <meta property="og:title" content="OSM + Leaflet 學習筆記 3：推薦幾個好用套件 - Augustus - Let's Write"/>
+    <meta itemprop="name" content="OSM + Leaflet 學習筆記 3：推薦幾個好用套件 - Augustus - Let's Write"/>
+    <meta name="description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 推薦幾個好用套件"/>
+    <meta property="og:description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 推薦幾個好用套件"/>
+    <meta itemprop="description" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 推薦幾個好用套件"/>
+    <meta itemprop="image" content="https://letswritetw.github.io/letswrite-leaflet-plugin/fb.jpg"/>
+    <meta property="og:image" content="https://letswritetw.github.io/letswrite-leaflet-plugin/fb.jpg"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
-    <meta property="og:image:alt" content="OSM + Leaflet 學習筆記 3：Leaflet.Locate 抓目前所在位置"/>
-    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680603021"/>
-    <script src="https://cdn.tailwindcss.com?ckcachebust=7C8EFE6B7F4925E931AD639589563589"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css?ckcachebust=680603021"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680603021"/>
-    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=4C2501A4432AD6FEFA78FAF19FFB2D38" media="screen"/>
+    <meta property="og:image:alt" content="OSM + Leaflet 學習筆記 3：推薦幾個好用套件"/>
+    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680790489"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css?ckcachebust=680790489" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="crossorigin"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680790489"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css?ckcachebust=680790489"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css?ckcachebust=680790489"/>
+    <script src="https://cdn.tailwindcss.com?ckcachebust=B679D9639943726D9AB6C7C317CA97FC"></script>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=AF6639EB77D538A72C15FDCE4844D352" media="screen"/>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#42A6F7',
+            }
+          }
+        }
+      }
+      
+    </script>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=AF6639EB77D538A72C15FDCE4844D352" media="screen"/>
     <!-- Google Tag Manager-->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,14 +49,26 @@
       })(window,document,'script','dataLayer','GTM-PGQ9WQT');
     </script>
   </head>
-  <body>
+  <body class="bg-slate-900 text-white">
     <!-- Google Tag Manager (noscript)-->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <div id="map"></div>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7?ckcachebust=680603021"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680603021"></script>
-    <script src="dist/main.min.js?ckcachebust=EB95A2FCD97420C17F99CB55493FD9B2"></script>
+    <div class="container mx-auto py-10">
+      <div class="text-center">
+        <h1 class="mb-6 font-bold text-4xl">OSM + Leaflet 學習筆記 3：推薦幾個好用套件</h1>
+        <p>筆記文：<a class="text-main underline hover:no-underline" href="https://www.letswrite.tw/leaflet-plugin/">Let's Write</a></p>
+        <hr class="my-8 border-0 border-b border-zinc-200 border-opacity-40"/>
+      </div>
+      <!-- map-->
+      <div class="relative w-full h-0 pb-[56.25%]">
+        <div class="absolute w-full h-full" id="map"></div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js?ckcachebust=680790489" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680790489"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js?ckcachebust=680790489"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js?ckcachebust=680790489"></script>
+    <script src="dist/main.min.js?ckcachebust=62AECDCB1B9A1127341D5FA8F1EA9946"></script>
   </body>
 </html>
