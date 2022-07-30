@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // https://github.com/domoritz/leaflet-locatecontrol
   L.control.locate({
     position: 'topleft',
+    locateOptions: {
+      enableHighAccuracy: true
+    },
     strings: {
       title: '定位我的位置',
       metersUnit: '公尺',

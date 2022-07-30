@@ -57,6 +57,9 @@
         margin-top: 1px;
         margin-left: 4px;
       }
+      .leaflet-pseudo-fullscreen .leaflet-left {
+        left: 0 !important;
+      }
       @media screen and (max-width: 640px) {
         .sidebar-left ~ .sidebar-map {
           margin-left: 0;
@@ -66,6 +69,12 @@
         }
         .leaflet-control-attribution {
           padding-left: 50px;
+        }
+        .leaflet-pseudo-fullscreen .leaflet-left {
+          padding-left: 0;
+        }
+        .leaflet-pseudo-fullscreen .leaflet-control-attribution {
+          padding-left: 5px;
         }
       }
       
@@ -138,7 +147,7 @@
     <!-- Leaflet.js-->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
     <!-- Leaflet.Locate-->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js"></script>
+    <script src="dist/L.Control.Locate.min.js"></script>
     <!-- Leaflet.Control.FullScreen-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js"></script>
     <!-- Leaflet.MiniMap-->
