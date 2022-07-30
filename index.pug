@@ -1,6 +1,6 @@
 - var link = 'leaflet-plugin'
-- var title = 'OSM + Leaflet 學習筆記 3：推薦幾個好用套件'
-- var description = 'OSM + Leaflet 學習筆記 3：Leaflet.Locate 推薦幾個好用套件'
+- var title = 'OSM + Leaflet 學習筆記 3：定位、全螢幕、小地圖、列印、客製選單'
+- var description = 'OSM + Leaflet 學習筆記 3：定位、全螢幕、小地圖、列印、客製選單'
 
 <!DOCTYPE html>
 html(lang="zh-Hant")
@@ -24,31 +24,31 @@ html(lang="zh-Hant")
     meta(property="og:description", content=description)
     meta(itemprop="description", content=description)
 
-    meta(itemprop="image", content=`https://letswritetw.github.io/letswrite-${link}/fb.jpg`)
-    meta(property="og:image", content=`https://letswritetw.github.io/letswrite-${link}/fb.jpg`)
+    meta(itemprop="image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
+    meta(property="og:image", content=`https://letswritetw.github.io/letswrite-${link}/fb.png`)
     meta(property="og:image:width", content="1200")
     meta(property="og:image:height", content="630")
     meta(property="og:image:alt", content=title)
 
     link(rel="shortcut icon", href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png")
 
-    //- Leaflet.js
+    // Leaflet.js
     link(rel="stylesheet", href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css", integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==", crossorigin)
 
-    //- Leaflet.Locate
+    // Leaflet.Locate
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css")
 
-    //- Leaflet.Control.FullScreen
+    // Leaflet.Control.FullScreen
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css")
 
-    //- Leaflet.MiniMap
+    // Leaflet.MiniMap
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css")
 
-    //- leaflet-sidebar-v2
+    // leaflet-sidebar-v2
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="dist/leaflet-sidebar.min.css")
 
-    //- Tailwind CSS
+    // Tailwind CSS
     script(src="https://cdn.tailwindcss.com")
     link(rel="stylesheet", href="dist/style.min.css", media="screen")
     script.
@@ -154,23 +154,23 @@ html(lang="zh-Hant")
 
           #map.sidebar-map.absolute.w-full(class="!h-full")
 
-    //- Leaflet.js
+    // Leaflet.js
     script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" ,integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==", crossorigin)
 
-    //- Leaflet.Locate
+    // Leaflet.Locate
     script(src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js")
 
-    //- Leaflet.Control.FullScreen
+    // Leaflet.Control.FullScreen
     script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js")
 
-    //- Leaflet.MiniMap
+    // Leaflet.MiniMap
     script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js")
 
-    //- leaflet-sidebar-v2
+    // leaflet-sidebar-v2
     script(src="dist/leaflet-sidebar.min.js")
 
-    //- leaflet-easyPrint
+    // leaflet-easyPrint
     script(src="https://cdn.jsdelivr.net/npm/leaflet-easyprint@2.1.9/dist/bundle.js")
 
-    //- main
+    // main
     script(src="dist/main.min.js")
