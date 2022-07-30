@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>OSM + Leaflet 學習筆記 3：推薦幾個好用套件 - August - Let's Write</title>
-    <link rel="canonical" href="https://www.letswrite.tw/leaflet-plugin/?ckcachebust=680790489"/>
+    <link rel="canonical" href="https://www.letswrite.tw/leaflet-plugin/?ckcachebust=680841017"/>
     <meta property="og:url" content="https://letswritetw.github.io/letswrite-leaflet-plugin/"/>
     <meta property="fb:app_id" content="911000986339138"/>
     <meta property="og:type" content="website"/>
@@ -20,12 +20,14 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <meta property="og:image:alt" content="OSM + Leaflet 學習筆記 3：推薦幾個好用套件"/>
-    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680790489"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css?ckcachebust=680790489" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="crossorigin"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680790489"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css?ckcachebust=680790489"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css?ckcachebust=680790489"/>
-    <script src="https://cdn.tailwindcss.com?ckcachebust=B679D9639943726D9AB6C7C317CA97FC"></script>
+    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680841017"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css?ckcachebust=680841017" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="crossorigin"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680841017"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css?ckcachebust=680841017"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css?ckcachebust=680841017"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css?ckcachebust=680841017"/>
+    <link rel="stylesheet" href="dist/leaflet-sidebar.min.css?ckcachebust=00FDEFDCA6C998E6161FA1B4E6B93FD9"/>
+    <script src="https://cdn.tailwindcss.com?ckcachebust=1ADBAC06E20654FADA067A47A5B18FDF"></script>
     <link rel="stylesheet" href="dist/style.min.css?ckcachebust=AF6639EB77D538A72C15FDCE4844D352" media="screen"/>
     <script>
       tailwind.config = {
@@ -47,6 +49,7 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+      
     </script>
   </head>
   <body class="bg-slate-900 text-white">
@@ -61,14 +64,54 @@
         <hr class="my-8 border-0 border-b border-zinc-200 border-opacity-40"/>
       </div>
       <!-- map-->
-      <div class="relative w-full h-0 pb-[56.25%]">
-        <div class="absolute w-full h-full" id="map"></div>
+      <div class="px-10">
+        <div class="relative w-full h-0 pb-[75%] sm:pb-[56.25%]">
+          <!-- leaflet-sidebar-v2-->
+          <div class="sidebar collapsed !border-r-0" id="sidebar">
+            <!-- Tabs 按鈕-->
+            <div class="sidebar-tabs">
+              <!-- 第一個 ul 在上面-->
+              <ul>
+                <li><a class="justify-center items-center !flex" href="#home"><img src="dist/menu-hambuger.svg"/></a></li>
+                <li><a class="justify-center items-center !flex" href="https://www.letswrite.tw/leaflet-plugins/" target="_blank"><img src="dist/web.svg"/></a></li>
+                <li><a class="justify-center items-center !flex" href="https://github.com/letswritetw/letswrite-leaflet-plugins" target="_blank"><img src="dist/brand-github.svg"/></a></li>
+              </ul>
+              <!-- 第二個 ul 在下面-->
+              <ul>
+                <li><a class="justify-center items-center !flex" href="#settings"><img src="dist/setting.svg"/></a></li>
+              </ul>
+            </div>
+            <!-- Tabs 內容-->
+            <div class="sidebar-content text-gray-800">
+              <div class="sidebar-pane" id="home">
+                <h3 class="sidebar-header mb-4 bg-main">客製選單 說明<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h3>
+                <p class="mb-2 font-bold text-xl">使用套件</p>
+                <ul class="list-disc pl-6">
+                  <li><a class="inline-block mb-4 text-main" href="https://github.com/turbo87/sidebar-v2/" target="_blank">sidebar-v2</a></li>
+                </ul>
+                <p class="mb-2 font-bold text-xl">其它覺得不錯的套件</p>
+                <ul class="list-disc pl-6">
+                  <li class="mb-2"><a class="text-main" href="https://github.com/yohanboniface/Leaflet.TileLegend" target="_blank">Leaflet.TileLegend</a></li>
+                  <li class="mb-2"><a class="text-main" href="https://github.com/yigityuce/Leaflet.Control.Custom" target="_blank">Leaflet.Control.Custom</a></li>
+                  <li class="mb-2"><a class="text-main" href="https://github.com/ptma/Leaflet.Legend" target="_blank">Leaflet.Legend</a></li>
+                  <li class="mb-2"><a class="text-main" href="https://github.com/maxwell-ilai/Leaflet.SidePanel" target="_blank">Leaflet.SidePanel</a></li>
+                </ul>
+              </div>
+              <div class="sidebar-pane" id="settings">
+                <h3 class="sidebar-header mb-4 bg-main">設定<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h3>
+                <p>這邊可以加入使用說明</p>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-map absolute w-full !h-full" id="map"></div>
+        </div>
       </div>
     </div>
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js?ckcachebust=680790489" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680790489"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js?ckcachebust=680790489"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js?ckcachebust=680790489"></script>
-    <script src="dist/main.min.js?ckcachebust=62AECDCB1B9A1127341D5FA8F1EA9946"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js?ckcachebust=680841017" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680841017"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js?ckcachebust=680841017"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js?ckcachebust=680841017"></script>
+    <script src="dist/leaflet-sidebar.min.js?ckcachebust=6D2141CE4C31AE0E660DA93C546E73F3"></script>
+    <script src="dist/main.min.js?ckcachebust=C1DA55A43357748D2718C2F32D13CC49"></script>
   </body>
 </html>

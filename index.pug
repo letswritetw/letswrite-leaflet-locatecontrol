@@ -44,6 +44,10 @@ html(lang="zh-Hant")
     //- Leaflet.MiniMap
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css")
 
+    //- leaflet-sidebar-v2
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="dist/leaflet-sidebar.min.css")
+
     //- Tailwind CSS
     script(src="https://cdn.tailwindcss.com")
     link(rel="stylesheet", href="dist/style.min.css", media="screen")
@@ -67,6 +71,7 @@ html(lang="zh-Hant")
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+
   body.bg-slate-900.text-white
 
     // Google Tag Manager (noscript)
@@ -81,8 +86,63 @@ html(lang="zh-Hant")
         hr.my-8.border-0.border-b.border-zinc-200.border-opacity-40
       
       // map
-      .relative.w-full.h-0(class="pb-[56.25%]")
-        #map.absolute.w-full.h-full
+      .px-10
+        .relative.w-full.h-0(class="pb-[75%] sm:pb-[56.25%]")
+
+          // leaflet-sidebar-v2
+          #sidebar.sidebar.collapsed(class="!border-r-0")
+            
+            // Tabs 按鈕
+            .sidebar-tabs
+
+              // 第一個 ul 在上面
+              ul
+                li
+                  a.justify-center.items-center(class="!flex", href="#home")
+                    //- i.fa.fa-bars
+                    img(src="dist/menu-hambuger.svg")
+                li
+                  a.justify-center.items-center(class="!flex", href="https://www.letswrite.tw/leaflet-plugins/", target="_blank")
+                    img(src="dist/web.svg")
+                li
+                  a.justify-center.items-center(class="!flex", href="https://github.com/letswritetw/letswrite-leaflet-plugins", target="_blank")
+                    img(src="dist/brand-github.svg")
+
+              // 第二個 ul 在下面
+              ul
+                li
+                  a.justify-center.items-center(class="!flex", href="#settings")
+                    img(src="dist/setting.svg")
+            
+            // Tabs 內容
+            .sidebar-content.text-gray-800
+              
+              #home.sidebar-pane
+                h3.sidebar-header.mb-4.bg-main 客製選單 說明
+                  span.sidebar-close
+                    i.fa.fa-caret-left
+                p.mb-2.font-bold.text-xl 使用套件
+                ul.list-disc.pl-6
+                  li
+                    a.inline-block.mb-4.text-main(href="https://github.com/turbo87/sidebar-v2/", target="_blank") sidebar-v2
+                p.mb-2.font-bold.text-xl 其它覺得不錯的套件
+                ul.list-disc.pl-6
+                  li.mb-2
+                    a.text-main(href="https://github.com/yohanboniface/Leaflet.TileLegend", target="_blank") Leaflet.TileLegend
+                  li.mb-2
+                    a.text-main(href="https://github.com/yigityuce/Leaflet.Control.Custom", target="_blank") Leaflet.Control.Custom
+                  li.mb-2
+                    a.text-main(href="https://github.com/ptma/Leaflet.Legend", target="_blank") Leaflet.Legend
+                  li.mb-2
+                    a.text-main(href="https://github.com/maxwell-ilai/Leaflet.SidePanel", target="_blank") Leaflet.SidePanel
+              
+              #settings.sidebar-pane
+                h3.sidebar-header.mb-4.bg-main 設定
+                  span.sidebar-close
+                    i.fa.fa-caret-left
+                p 這邊可以加入使用說明
+
+          #map.sidebar-map.absolute.w-full(class="!h-full")
 
     //- Leaflet.js
     script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" ,integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==", crossorigin)
@@ -95,6 +155,9 @@ html(lang="zh-Hant")
 
     //- Leaflet.MiniMap
     script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js")
+
+    //- leaflet-sidebar-v2
+    script(src="dist/leaflet-sidebar.min.js")
 
     //- main
     script(src="dist/main.min.js")

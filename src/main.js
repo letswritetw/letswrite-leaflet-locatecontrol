@@ -86,5 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Leaflet.Control.Custom：https://github.com/yigityuce/Leaflet.Control.Custom
   // Leaflet.Legend：https://github.com/ptma/Leaflet.Legend
   // Leaflet.SidePanel：https://github.com/maxwell-ilai/Leaflet.SidePanel
+  var sidebar = L.control.sidebar('sidebar').addTo(map);
 
 })
