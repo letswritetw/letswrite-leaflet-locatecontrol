@@ -57,6 +57,17 @@
         margin-top: 1px;
         margin-left: 4px;
       }
+      @media screen and (max-width: 640px) {
+        .sidebar-left ~ .sidebar-map {
+          margin-left: 0;
+        }
+        .leaflet-left {
+          padding-left: 40px;
+        }
+        .leaflet-control-attribution {
+          padding-left: 50px;
+        }
+      }
       
     </style>
     <!-- Google Tag Manager-->
@@ -74,14 +85,14 @@
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <div class="container mx-auto py-10">
+    <div class="container mx-auto py-10 px-4 sm:px-0">
       <div class="text-center">
         <h1 class="mb-6 font-bold text-4xl">OSM + Leaflet 學習筆記 3：定位、全螢幕、小地圖、列印、客製選單</h1>
         <p>筆記文：<a class="text-main underline hover:no-underline" href="https://www.letswrite.tw/leaflet-plugins/">Let's Write</a></p>
         <hr class="my-8 border-0 border-b border-zinc-200 border-opacity-40"/>
       </div>
       <!-- map-->
-      <div class="px-10">
+      <div class="sm:px-10">
         <div class="relative w-full h-0 pb-[75%] sm:pb-[56.25%]">
           <!-- leaflet-sidebar-v2-->
           <div class="sidebar collapsed !border-r-0" id="sidebar">

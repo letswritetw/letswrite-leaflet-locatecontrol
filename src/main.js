@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 取資料
   // 國家公園、國家森林遊樂區及國家風景區範圍內之觀光景點(本島)：https://data.gov.tw/dataset/73234
-  // SHP 轉 GEO json：https://mapshaper.org/
+  // SHP 轉 GeoJSON：https://mapshaper.org/
   // mapshaper 轉座標：https://help.flourish.studio/article/67-how-to-make-your-coordinates-wgs84-with-mapshaper-org
-  fetch('dist/national-park.json?v=2')
+  fetch('dist/national-park.json')
     .then(res => res.json())
     .then(res => {
       const data = res.features;
@@ -78,10 +78,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 小地圖：Leaflet.MiniMap
   // https://github.com/Norkart/Leaflet-MiniMap
+  let miniWidth = 150, miniHeight = 150;;
+  if(document.body.clientWidth <= 640) {
+    miniWidth = 75;
+    miniHeight = 75;
+  }
   const miniOSM = new L.TileLayer(osmUri, {
     minZoom: 0, maxZoom: 13, attribution: attribution
   });
-  const miniMap = new L.Control.MiniMap(miniOSM).addTo(map);
+  const miniMap = new L.Control.MiniMap(miniOSM, {
+    width: miniWidth,
+    height: miniHeight,
+  }).addTo(map);
 
   // 客製選單：sidebar-v2
   // https://github.com/turbo87/sidebar-v2/

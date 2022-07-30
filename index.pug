@@ -73,6 +73,17 @@ html(lang="zh-Hant")
         margin-top: 1px;
         margin-left: 4px;
       }
+      @media screen and (max-width: 640px) {
+        .sidebar-left ~ .sidebar-map {
+          margin-left: 0;
+        }
+        .leaflet-left {
+          padding-left: 40px;
+        }
+        .leaflet-control-attribution {
+          padding-left: 50px;
+        }
+      }
 
     // Google Tag Manager
     script.
@@ -88,7 +99,7 @@ html(lang="zh-Hant")
     noscript
       iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT", height="0", width="0", style="display:none;visibility:hidden")
     
-    .container.mx-auto.py-10
+    .container.mx-auto.py-10(class="px-4 sm:px-0")
       .text-center
         h1.mb-6.font-bold.text-4xl=title
         p 筆記文：
@@ -96,7 +107,7 @@ html(lang="zh-Hant")
         hr.my-8.border-0.border-b.border-zinc-200.border-opacity-40
       
       // map
-      .px-10
+      div(class="sm:px-10")
         .relative.w-full.h-0(class="pb-[75%] sm:pb-[56.25%]")
 
           // leaflet-sidebar-v2
