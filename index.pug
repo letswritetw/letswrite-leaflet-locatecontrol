@@ -64,6 +64,16 @@ html(lang="zh-Hant")
 
     link(rel="stylesheet", href="dist/style.min.css", media="screen")
 
+    // 調整 樣式
+    style.
+      .leaflet-control-easyPrint-button {
+        border-radius: 2px !important;
+      }
+      .easyPrintSizeMode {
+        margin-top: 1px;
+        margin-left: 4px;
+      }
+
     // Google Tag Manager
     script.
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -158,6 +168,9 @@ html(lang="zh-Hant")
 
     //- leaflet-sidebar-v2
     script(src="dist/leaflet-sidebar.min.js")
+
+    //- leaflet-easyPrint
+    script(src="https://cdn.jsdelivr.net/npm/leaflet-easyprint@2.1.9/dist/bundle.js")
 
     //- main
     script(src="dist/main.min.js")

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const map = L.map('map').setView(center, zoom);
   const osmUri = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
   const attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>';
+
   L.tileLayer(osmUri, {
     attribution: attribution
   }).addTo(map);
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.json())
     .then(res => {
       const data = res.features;
-      console.log(data);
 
       // 建 marker 並放上地圖
       const customIcon = L.icon({
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).bindPopup(`<b>${name}</b><br/>${address}`)
           .addTo(map);
       });
+
     })
   
   // 抓定位：Leaflet.Locate
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }).addTo(map);
 
   // 全螢幕：Leaflet.Control.FullScreen
+  // https://github.com/brunob/leaflet.fullscreen
   L.control.fullscreen({
     position: 'topleft',
     title: '進入全螢幕',
@@ -75,17 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 小地圖：Leaflet.MiniMap
+  // https://github.com/Norkart/Leaflet-MiniMap
   const miniOSM = new L.TileLayer(osmUri, {
     minZoom: 0, maxZoom: 13, attribution: attribution
   });
   const miniMap = new L.Control.MiniMap(miniOSM).addTo(map);
 
   // 客製選單：sidebar-v2
-  // sidebar-v2：https://github.com/turbo87/sidebar-v2/
-  // Leaflet.TileLegend：https://github.com/yohanboniface/Leaflet.TileLegend
-  // Leaflet.Control.Custom：https://github.com/yigityuce/Leaflet.Control.Custom
-  // Leaflet.Legend：https://github.com/ptma/Leaflet.Legend
-  // Leaflet.SidePanel：https://github.com/maxwell-ilai/Leaflet.SidePanel
-  var sidebar = L.control.sidebar('sidebar').addTo(map);
+  // https://github.com/turbo87/sidebar-v2/
+  const sidebar = L.control.sidebar('sidebar').addTo(map);
+
+  // leaflet-easyPrint
+  L.easyPrint({
+    title: '列印地圖',
+    position: 'topleft',
+    sizeModes: ['Current', 'A4Portrait', 'A4Landscape']
+  }).addTo(map);
 
 })

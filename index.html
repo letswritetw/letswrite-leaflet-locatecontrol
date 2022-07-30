@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>OSM + Leaflet 學習筆記 3：推薦幾個好用套件 - August - Let's Write</title>
-    <link rel="canonical" href="https://www.letswrite.tw/leaflet-plugin/?ckcachebust=680841017"/>
+    <link rel="canonical" href="https://www.letswrite.tw/leaflet-plugin/?ckcachebust=680842137"/>
     <meta property="og:url" content="https://letswritetw.github.io/letswrite-leaflet-plugin/"/>
     <meta property="fb:app_id" content="911000986339138"/>
     <meta property="og:type" content="website"/>
@@ -20,15 +20,15 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <meta property="og:image:alt" content="OSM + Leaflet 學習筆記 3：推薦幾個好用套件"/>
-    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680841017"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css?ckcachebust=680841017" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="crossorigin"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680841017"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css?ckcachebust=680841017"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css?ckcachebust=680841017"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css?ckcachebust=680841017"/>
+    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=680842137"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css?ckcachebust=680842137" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="crossorigin"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css?ckcachebust=680842137"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.css?ckcachebust=680842137"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css?ckcachebust=680842137"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css?ckcachebust=680842137"/>
     <link rel="stylesheet" href="dist/leaflet-sidebar.min.css?ckcachebust=00FDEFDCA6C998E6161FA1B4E6B93FD9"/>
     <script src="https://cdn.tailwindcss.com?ckcachebust=1ADBAC06E20654FADA067A47A5B18FDF"></script>
-    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=AF6639EB77D538A72C15FDCE4844D352" media="screen"/>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=5E36C17D9D25048FBC6DDAA2F3C1FE53" media="screen"/>
     <script>
       tailwind.config = {
         theme: {
@@ -41,7 +41,18 @@
       }
       
     </script>
-    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=AF6639EB77D538A72C15FDCE4844D352" media="screen"/>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=5E36C17D9D25048FBC6DDAA2F3C1FE53" media="screen"/>
+    <!-- 調整 樣式-->
+    <style>
+      .leaflet-control-easyPrint-button {
+        border-radius: 2px !important;
+      }
+      .easyPrintSizeMode {
+        margin-top: 1px;
+        margin-left: 4px;
+      }
+      
+    </style>
     <!-- Google Tag Manager-->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -107,11 +118,12 @@
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js?ckcachebust=680841017" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680841017"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js?ckcachebust=680841017"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js?ckcachebust=680841017"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js?ckcachebust=680842137" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="crossorigin"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js?ckcachebust=680842137"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/2.4.0/Control.FullScreen.min.js?ckcachebust=680842137"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js?ckcachebust=680842137"></script>
     <script src="dist/leaflet-sidebar.min.js?ckcachebust=6D2141CE4C31AE0E660DA93C546E73F3"></script>
-    <script src="dist/main.min.js?ckcachebust=C1DA55A43357748D2718C2F32D13CC49"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easyprint@2.1.9/dist/bundle.js?ckcachebust=680842137"></script>
+    <script src="dist/main.min.js?ckcachebust=68D4878C18034A574D9A23F536AB0205"></script>
   </body>
 </html>
