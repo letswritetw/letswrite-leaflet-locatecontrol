@@ -80,4 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const miniMap = new L.Control.MiniMap(miniOSM).addTo(map);
 
+  // 客製選單：sidebar-v2
+  // sidebar-v2：https://github.com/turbo87/sidebar-v2/
+  // Leaflet.TileLegend：https://github.com/yohanboniface/Leaflet.TileLegend
+  // Leaflet.Control.Custom：https://github.com/yigityuce/Leaflet.Control.Custom
+  // Leaflet.Legend：https://github.com/ptma/Leaflet.Legend
+  // Leaflet.SidePanel：https://github.com/maxwell-ilai/Leaflet.SidePanel
+
 })
