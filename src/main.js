@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     forcePseudoFullscreen: true,
     fullscreenElement: false
   }).addTo(map);
-  const fullscreenBtn = document.querySelector('.leaflet-control-zoom-fullscreen')
+  const fullscreenBtn = document.querySelector('.leaflet-control-zoom-fullscreen');
   map.on('enterFullscreen', () => {
     fullscreenBtn.innerHTML = '<img class="p-1" src="dist/fullscreen-exit.svg">';
   });
@@ -94,15 +94,16 @@ document.addEventListener('DOMContentLoaded', () => {
     height: miniHeight,
   }).addTo(map);
 
-  // 客製選單：sidebar-v2
-  // https://github.com/turbo87/sidebar-v2/
-  const sidebar = L.control.sidebar('sidebar').addTo(map);
-
-  // leaflet-easyPrint
+  // 列印：leaflet-easyPrint
+  // https://github.com/rowanwins/leaflet-easyPrint
   L.easyPrint({
     title: '列印地圖',
     position: 'topleft',
     sizeModes: ['Current', 'A4Portrait', 'A4Landscape']
   }).addTo(map);
+
+  // 客製選單：sidebar-v2
+  // https://github.com/turbo87/sidebar-v2/
+  const sidebar = L.control.sidebar('sidebar').addTo(map);
 
 })
